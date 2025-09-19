@@ -1,0 +1,10 @@
+GET https://myserver.net/api/students
+    a list of all students
+
+GET https://myserver.net/api/students/5031
+    a student with the id 5031
+
+GET https://myserver.net/api/students/5301/address
+    all addresses for student 5301
+
+

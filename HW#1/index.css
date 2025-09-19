@@ -1,0 +1,225 @@
+:root {
+  --split: 50; 
+}
+
+/* ===== Base ===== */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #111;
+  line-height: 1.5;
+}
+
+/* Optional helper */
+.default-background {
+  background-color: aqua;
+}
+
+/* ===== Header ===== */
+.header {
+  padding: 16px 20px;
+  text-align: center;
+  background: #1f2937; /* dark slate */
+  color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* ===== Fixed Callouts ===== */
+.fixed {
+  position: static;
+  padding: 8px 12px;
+  font-size: 16px;
+  line-height: 1;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.fixed-stack {
+  position: fixed;
+  left: 20px;
+  bottom: 60px;
+  display: flex;
+  flex-direction: column-reverse; /* keeps bottom-most item visually lowest */
+  gap: 12px;
+}
+
+.fixed-0{
+    background-color: chocolate;
+}
+
+.fixed-1{
+    background-color: lightgreen;
+}
+
+.fixed-2{
+    background-color: rgb(227, 144, 238);
+    display: grid;
+}
+
+
+/* ===== Content Block ===== */
+.text-wall {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 20px 24px;
+  background: #123998;
+  color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  display: grid;
+  gap: 12px;
+}
+
+/* ===== Interaction Area ===== */
+.user-interaction {
+  max-width: 900px;
+  margin: 24px auto 12px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.user-input {
+  width: 100%;
+  min-height: 140px;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111;
+  font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
+  resize: vertical;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.user-input:focus {
+  outline: none;
+  border-color: #1f2937;
+  box-shadow: 0 0 0 3px rgba(31,41,55,0.15);
+}
+
+.parse-button {
+  align-self: flex-start;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.parse-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.parse-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31,41,55,0.2);
+}
+
+.shuffle-button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #206bff, #3c3f01); /* coral → soft yellow */
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.shuffle-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.shuffle-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.shuffle-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,127,80,0.3); /* coral glow */
+}
+
+
+/* ===== Error Log ===== */
+.error-log {
+  max-width: 900px;
+  margin: 8px auto 24px;
+  padding: 8px 12px;
+  color: red;
+  background: rgba(255, 0, 0, 0.06);
+  border: 1px solid rgba(255,0,0,0.25);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  min-height: 30px; /* preserves space */
+  display: grid;
+  place-items: center;
+}
+
+/* ===== Links ===== */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ===== Legacy Utility (if needed) ===== */
+.user-interactions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.bg-left,
+.bg-right {
+  position: fixed;  
+  top: 0;
+  bottom: 0;      
+  z-index: -1;  
+  transition: left 1s ease, width 1s ease; 
+}
+
+.bg-left  { 
+  left: 0;
+  background: #eeff02;
+  width: calc(var(--split) * 1vw); 
+}
+.bg-right { 
+  width: calc((100 - var(--split)) * 1vw);
+  left: calc(var(--split) * 1vw); 
+  background: #0055ff; 
+}

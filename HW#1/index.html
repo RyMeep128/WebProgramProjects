@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>HW#1</title>
+    <link rel = "stylesheet" type="text/css" href="index.css">
+    <script src="index.js"></script>
+  </head>
+  <body id = "body" class = "main">
+    <!--Fixed DIV#1 with picture inside-->
+    <div class="fixed-stack">
+      <a id="external-link" class="fixed fixed-0" href="https://www.youtube.com/watch?v=rbHUhCcSXEM" target="_blank">
+        <span id="external-link-text">Learn More</span>
+        <img src="https://cdn.discordapp.com/attachments/805589695954157568/1415461638202593280/ChatGPT_Image_Sep_10_2025_05_17_51_PM.png?ex=68c34ae0&is=68c1f960&hm=e14f46383552c326d3019a1100a567f5f4e5a0d05b73862caa5e41148fda0d11&" alt="Learn more image styled yellow, blue and black" width="20">
+      </a>
+      <div id="fixed-text" class="fixed fixed-1">Scrolling text</div>
+      <div class="fixed fixed-2"><button class = "shuffle-button" id = "shuffle-button" >Shuffle</button></div>
+    </div>
+
+    <div id ="header" class = "header">
+      Super Hero Facts
+    </div>
+
+    <div id = "bg-left" class="bg-left"></div>
+    <div id = "bg-right" class="bg-right"></div>
+
+    <!-- Cool superhero text DIV#2 -->
+    <div class = "text-wall">
+      Invincible, created by writer Robert Kirkman and artist Cory Walker in 2003 under Image Comics, is one of the most fascinating modern superhero stories because it combines traditional superhero tropes with brutal realism and emotional weight. The hero, Mark Grayson (aka Invincible), is the teenage son of Omni-Man, Earth’s greatest protector—or so it seems. One fun fact is that Omni-Man is actually a Viltrumite, part of a powerful alien race bent on conquering planets, and Mark’s coming-of-age story quickly turns into a saga of betrayal and intergalactic warfare. The comic series ran for 144 issues, making it one of the longest creator-owned superhero runs, and it was praised for never rebooting or backtracking its timeline—every action has lasting consequences. The Amazon Prime adaptation stays faithful but ramps up the violence and emotional stakes with stunning animation, and it has been renewed for multiple seasons due to its popularity. Another interesting tidbit is that Invincible often crosses into meta-humor; for instance, the series includes parodies of classic superhero teams like the Justice League (“Guardians of the Globe”) only to shockingly subvert expectations. Invincible himself has some unusual feats compared to other heroes—he once fought a dimension-hopping villain who kept speeding up time so much that Mark’s daughter aged years in what felt like hours. The suit design was intentionally made simple (blue and yellow) so it could stand out from the often overdesigned superhero costumes. The series also features an impressive rogue’s gallery—villains like Angstrom Levy, who manipulates alternate dimensions, and Conquest, a terrifying elder Viltrumite. Behind the scenes, Ryan Ottley, who took over as main artist after issue #8, is responsible for much of the comic’s iconic look, especially its infamous over-the-top gore. Interestingly, Invincible has cameoed outside his own book—he has appeared in Spider-Man comics and even in crossover games like Skullgirls. Despite the graphic violence, the heart of Invincible is about family, responsibility, and how a young man balances extraordinary power with ordinary human struggles, which is why the series is often described as “Spider-Man meets Dragon Ball Z with The Boys levels of violence.”
+    </div>
+
+    <!-- User interaction DIV#3 -->
+    <div class = "user-interaction">
+      <textarea id ="user-input" class = "user-input" placeholder='"jsonExample": {
+              "color": "white",
+              "backgroundColor": "darkslateblue",
+              "link": {
+                "href": "https://www.marvel.com",
+                "displayText": "Marvel Official Site"
+              }
+            }'>
+        </textarea>
+      <button id = "parse-button" class = "parse-button">Click</button>
+
+    <!-- Error log DIV #4 -->
+    </div>
+    
+    <div id = "error" class = "error-log"></div>
+
+    
+    <script type="module">
+      import { registerStretchLevels } from "https://spazard1.github.io/webprogramming2025/src/stretchLevels.module.js";
+
+      window.addEventListener("load", () => {
+        registerStretchLevels([
+          "Hawkeye Level",
+          "Iron Man Level",
+          "Thor Level"
+        ]);
+      });
+    </script>
+    
+  </body>
+
+</html>
