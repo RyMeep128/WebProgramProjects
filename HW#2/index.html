@@ -1,28 +1,38 @@
 <html>
-<head>
+  <head>
     <title>Homework 2 - Ryan Shafer</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel = "stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
     <script src="index.js"></script>
-</head>
-<body>
-    <div ckass = "main-div">
-        <form class = "main-form">
-            <label>First Name:</label>
-            <input type = "text" id = "firstName"/> 
-            <label>Last Name:</label>
-            <input type = "text" id = "lastName"/>
-            <label>Favorite Star wars character:</label>
-            <input type = "text" id = "character"/>
-        </form>
-        <div>
-            <button id = "pull-button" class = "form-button">Pull</button>
-            <button id = "push-button" class = "form-button">Push</button>
-            <button id = "read-button" class = "form-button">Get</button>
-        </div>
-        <div id = "results" class = "results"></div>
+  </head>
+  <body>
+    <div class="main-div">
+      <form class="main-form">
+        <label class="label">First Name:</label>
+        <input type="text" id="firstName" />
+        <label class="label">Last Name:</label>
+        <input type="text" id="lastName" />
+        <label class="label">Favorite Star wars character:</label>
+        <input type="text" id="character" />
+      </form>
+      <div class="button-div">
+        <button id="pull-button" class="form-button">Force Pull</button
+        ><button id="push-button" class="form-button">Force Push</button
+        ><button id="read-button" class="form-button">Force Read</button>
+        <button id="delete-button" class="form-button">Force Delete</button>
+        <label id="index-label" class="index-label"></label>
+      </div>
+      <form class="secondary-form">
+        <label class="label">View Date:</label>
+        <input type="text" id="view-date" />
+      </form>
+      <div class="button-div">
+        <button id="insight-button" class="form-button">Force Insight</button>
+        <button id="watch-button" class="form-button">Watch Movie</button>
+      </div>
+      <div id="results" class="results"></div>
     </div>
-</body>
-
+    <div id="error" class="error-log"></div>
+  </body>
 </html>

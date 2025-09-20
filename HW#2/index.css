@@ -1,58 +1,149 @@
+/* Page basics */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #1e1e1e;   /* softer dark grey */
+  color: #dcdcdc;        /* softer light text */
 }
 
+/* Two-column layout for the two forms + their button groups */
 .main-div {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #2a2a2a;   /* softer grey than body for contrast */
+  border: 2px solid #b33939; /* muted Mandalorian red */
+  border-radius: 6px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "lf rf"
+    "lb rb"
+    "res res";
+  gap: 16px;
+  box-sizing: border-box;
+  box-shadow: 0 0 12px rgba(179,57,57,0.3);
 }
 
-.main-form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
+/* Place items explicitly without using #id selectors */
+.main-div > .main-form { grid-area: lf; }
+.main-div > .secondary-form { grid-area: rf; }
+.main-div > div[id="button-div"]:nth-of-type(1) { grid-area: lb; }
+.main-div > div[id="button-div"]:nth-of-type(2) { grid-area: rb; }
+
+/* Results spans both columns at the bottom */
+.results {
+  grid-area: res;
+  margin-top: 8px;
+  padding: 12px;
+  background: #333;       /* softer contrast background */
+  border: 1px solid #b33939;
+  border-radius: 4px;
+  min-height: 60px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: #f08080;         /* light red text for “console feel” */
 }
 
-.main-form label {
-    margin-top: 10px;
-    font-weight: bold;
+/* Form content */
+.label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: #e74c3c;         /* softened red */
 }
 
-.main-form input {
-    padding: 6px;
-    margin-top: 4px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.main-form,
+.secondary-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-form input,
+.secondary-form input,
+.secondary-form textarea {
+  width: 80%;
+  max-width: 300px;
+  box-sizing: border-box;
+  margin-top: 4px;
+  padding: 8px;
+  border: 1px solid #b33939;
+  border-radius: 4px;
+  text-align: center;
+  background: #262626;    /* softer than black */
+  color: #dcdcdc;
+}
+
+.main-form input:focus,
+.secondary-form input:focus,
+.secondary-form textarea:focus {
+  outline: none;
+  border-color: #e74c3c;
+  box-shadow: 0 0 6px #e74c3c;
+}
+
+/* Date/view input area */
+.view-data {
+  min-height: 180px;
+  resize: vertical;
+}
+
+/* Button groups */
+.button-div {
+  margin-top: 8px;
+  text-align: center;
 }
 
 .form-button {
-    padding: 8px 12px;
-    margin: 5px 5px 0 0;
-    border: none;
-    border-radius: 4px;
-    background-color: #007acc;
-    color: white;
-    cursor: pointer;
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 6px 6px 0 0;
+  border: none;
+  border-radius: 4px;
+  background: #b33939;
+  color: #f5f5f5;
+  cursor: pointer;
+  font-weight: bold;
 }
-
 .form-button:hover {
-    background-color: #005f99;
+  background: #e74c3c;
 }
 
-.results {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    min-height: 40px;
-    font-family: monospace;
-    white-space: pre-wrap;
+/* Small details */
+.index-label {
+  margin-left: 8px;
+  font-weight: 600;
+  color: #e74c3c;
+}
+
+/* Stack on smaller screens */
+@media (max-width: 720px) {
+  .main-div {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "lf"
+      "lb"
+      "rf"
+      "rb"
+      "res";
+  }
+}
+
+/* ===== Error Log ===== */
+.error-log {
+  max-width: 900px;
+  margin: 8px auto 24px;
+  padding: 8px 12px;
+  color: #ff6b6b;          /* softer red */
+  background: rgba(179, 57, 57, 0.15);
+  border: 1px solid #b33939;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  min-height: 30px;
+  display: grid;
+  place-items: center;
 }
