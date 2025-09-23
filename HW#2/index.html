@@ -1,38 +1,102 @@
-<html>
+<!DOCTYPE html>
+<!--
+  File: index.html
+  Title: Homework 2 - Web Requests
+  Author: Ryan Shafer
+  Purpose: Web page for making GET/POST/DELETE requests to a Star Wars-themed API
+  Notes:
+    - CSS is in index.css
+    - Behavior is in index.js (plus one ES module import at the bottom)
+    - Layout uses a two-column grid; see .main-div in CSS
+-->
+
+<html lang="en">
   <head>
+    <!-- Document title shown in the browser tab -->
     <title>Homework 2 - Ryan Shafer</title>
+
+    <!-- Character encoding -->
     <meta charset="utf-8" />
+
+    <!-- Responsive viewport for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site stylesheet -->
     <link rel="stylesheet" type="text/css" href="index.css" />
+
+    <!-- Main script for page interactions (non-module) -->
     <script src="index.js"></script>
   </head>
+
   <body>
+    <!--
+      Main layout container
+      - Uses CSS Grid to position two forms, two button rows, and a results panel.
+    -->
     <div class="main-div">
+      <!-- Primary form: collects user details and favorite character -->
       <form class="main-form">
+        <!-- First Name field -->
         <label class="label">First Name:</label>
         <input type="text" id="firstName" />
+
+        <!-- Last Name field -->
         <label class="label">Last Name:</label>
         <input type="text" id="lastName" />
+
+        <!-- Favorite character field -->
         <label class="label">Favorite Star wars character:</label>
         <input type="text" id="character" />
       </form>
+
+      <!-- Action buttons for server interactions (left button group) -->
       <div class="button-div">
+        <!-- Triggers GET of the full dataset -->
         <button id="pull-button" class="form-button">Force Pull</button
         ><button id="push-button" class="form-button">Force Push</button
         ><button id="read-button" class="form-button">Force Read</button>
+        <!-- Deletes a random/selected record based on logic in index.js -->
         <button id="delete-button" class="form-button">Force Delete</button>
+
+        <!-- Displays the selected/target index for delete or other actions -->
         <label id="index-label" class="index-label"></label>
       </div>
+
+      <!-- Secondary form: used for watching movies -->
       <form class="secondary-form">
         <label class="label">View Date:</label>
         <input type="text" id="view-date" />
       </form>
+
+      <!-- Additional actions (right button group) -->
       <div class="button-div">
+        <!-- Runs insight/aggregation request against the API -->
         <button id="insight-button" class="form-button">Force Insight</button>
+        <!-- Optional action: navigate to or trigger a “watch” feature -->
         <button id="watch-button" class="form-button">Watch Movie</button>
       </div>
+
+      <!-- Results panel where server responses are rendered -->
       <div id="results" class="results"></div>
     </div>
+
+    <!-- Error log area: display user-friendly errors from fetch handlers -->
     <div id="error" class="error-log"></div>
+
+    <!--
+      Module import for course "stretch levels"
+      - Registers named challenge levels once the page has loaded.
+    -->
+    <script type="module">
+      import { registerStretchLevels } from "https://spazard1.github.io/webprogramming2025/src/stretchLevels.module.js";
+
+      window.addEventListener("load", () => {
+        registerStretchLevels([
+          "Qui-gon Jinn Level",
+          "Obi-wan Kenobi Level",
+          "Luke Skywalker Level",
+        ]);
+      });
+    </script>
   </body>
 </html>
